@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Practice</title>
+  <meta charset="utf-8">
+<style>
+input { display: block;
+        margin-bottom: 1em;
+        }
+label { float: left;
+        width: 5em;
+		padding-right: 1em;
+        text-align: right; 
+}
+#submit { margin-left: 7em; }	
+.error { font-family: Arial, sans-serif;
+         font-style: italic; font-size: .90em;
+         color: #FF0000; margin-left: 1em;
+}
+footer { font-size: .9em;
+			font-style: italic;
+			text-align: left;
+			padding: 1em;
+			margin-left: 180px;
+}
+
+</style>
+<script>
+function validateForm() {
+if (document.forms[0].userName.value == "" ) {
+    alert("Name field cannot be empty.");
+    return false;
+} // end if
+if (document.forms[0].userEmail.value == "") {
+    alert("E-mail field cannot be empty.");
+    return false;
+} // end if
+alert("Name and email are valid.");
+return true;
+} // end function validateForm
+</script>
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js">
+</script>
+<script>
+$(document).ready(function(){
+$('form').validate();
+});
+</script>
+</head>
+<body>
+<h1>JavaScript Form Handling</h1>
+<form method="post"
+      action="http://www.markmurtha.com/csis128/readform.asp"
+      onsubmit="return validateForm();">
+<label for="userName">Name:</label>
+<input type="text" name="userName" id="userName" class="required">
+<br>
+<label for="userEmail">E-mail address:</label>
+<input type="text" name="userEmail" id="userEmail" class="required email">
+<br>
+<input type="submit" value="Sign Up Now" id="submit">
+</form>
+</body>
+<footer>
+<footer>
+<br>
+Kirstie O'Connell E-mail: <a href="S1461156@student.mcckc.edu">S1461156@student.mcckc.edu</a>
+</footer>
+</html>
